@@ -37,7 +37,7 @@ Traceback (most recent call last):
     __package__ = None
     __spec__ = None
     erroneous_function = <function erroneous_function at 0x7f894df77bf8>
-    traceback = <module 'tracebackturbo' from '/srv/home/cxcv/Dropbox/home/git/python-tracebackturbo3/tracebackturbo.py'>
+    traceback = <module 'tracebackturbo' from 'tracebackturbo.py'>
   File "test.py", line 10, in erroneous_function
     raise Exception("it's a trap!")
     eggs = 'binary string with umlauts äöü.'
@@ -58,7 +58,7 @@ Exception: it's a trap!
 
 Python2
 -------
-See [https://github.com/cxcv/python-tracebackturbo2](https://github.com/cxcv/python-tracebackturbo2)
+See [https://github.com/cxcv/python-tracebackturbo](https://github.com/cxcv/python-tracebackturbo)
 
 License & Credit
 -----------------
