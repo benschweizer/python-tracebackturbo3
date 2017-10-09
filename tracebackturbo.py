@@ -342,7 +342,8 @@ class StackSummary(list):
             name = co.co_name
 
             fnames.add(filename)
-            linecache.lazycache(filename, f.f_globals)
+            if "lazycache" in dir(linecache):
+                linecache.lazycache(filename, f.f_globals)
             # Must defer line lookups until we have called checkcache.
             if capture_locals:
                 f_locals = f.f_locals
@@ -402,7 +403,7 @@ class StackSummary(list):
                 count += 1
             else:
                 if count > 3:
-                    result.append(f'  [Previous line repeated {count-3} more times]\n')
+                    result.append("  [Previous line repeated {count-3} more times]\n")
                 last_file = frame.filename
                 last_line = frame.lineno
                 last_name = frame.name
@@ -419,7 +420,7 @@ class StackSummary(list):
                     row.append('    {name} = {value}\n'.format(name=name, value=value))
             result.append(''.join(row))
         if count > 3:
-            result.append(f'  [Previous line repeated {count-3} more times]\n')
+            result.append("  [Previous line repeated {count-3} more times]\n")
         return result
 
 
@@ -452,7 +453,7 @@ class TracebackException:
     """
 
     def __init__(self, exc_type, exc_value, exc_traceback, *, limit=None,
-            lookup_lines=True, capture_locals=False, _seen=None):
+            lookup_lines=True, capture_locals=True, _seen=None):
         # NB: we need to accept exc_traceback, exc_value, exc_traceback to
         # permit backwards compat with the existing API, otherwise we
         # need stub thunk objects just to glue it together.
