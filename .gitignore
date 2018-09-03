@@ -3,4 +3,5 @@ __pycache__
 build
 dist
 tracebackturbo.egg-info
+tracebackturbo3.egg-info
 *.pyc

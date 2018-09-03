@@ -56,6 +56,13 @@ Traceback (most recent call last):
 Exception: it's a trap!
 ```
 
+Setup
+-----
+To setup tracebackturbo, simply drop the script in your working directory or install the egg from pypi:
+```
+$ pip install tracebackturbo3
+```
+
 Python2
 -------
 See [https://github.com/cxcv/python-tracebackturbo](https://github.com/cxcv/python-tracebackturbo)
