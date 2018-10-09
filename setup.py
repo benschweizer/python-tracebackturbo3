@@ -6,7 +6,7 @@ if not '3.4' <= sys.version < '4.0':
     raise ImportError('Python version not supported')
 
 setuptools.setup(name="tracebackturbo3",
-                 version="0.1",
+                 version="0.2",
                  maintainer="Benjamin Schweizer",
                  maintainer_email="cxcv@cxcv.de",
                  description="Patched version of traceback, also dumps local and global scope vars.",
